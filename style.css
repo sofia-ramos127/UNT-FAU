@@ -1,0 +1,60 @@
+/* Tipografía y layout */
+:root{
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --ink: #0f172a;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --bloq: #e5e7eb;
+  --disp: #fde047;
+  --aprob: #16a34a;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;}
+
+.topbar{
+  max-width:1200px;margin:24px auto 8px;padding:16px;
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+}
+.topbar h1{margin:0;font-weight:800;letter-spacing:.2px}
+.topbar p{margin:0;color:var(--muted)}
+.actions{margin-top:8px}
+.actions button{
+  border:1px solid var(--border);background:#fff;padding:8px 12px;border-radius:12px;cursor:pointer
+}
+.actions button:hover{filter:brightness(.98)}
+
+.ciclo{
+  max-width:1200px;margin:16px auto;padding:16px;border:1px solid var(--border);background:var(--card);border-radius:16px;
+  box-shadow:0 6px 16px rgba(2,6,23,.06);
+}
+.ciclo-title{margin:0 0 8px 0;color:#1d4ed8}
+.years{display:flex;flex-direction:column;gap:16px}
+
+.nivel{border:1px dashed var(--border);border-radius:14px;padding:12px}
+.nivel h3{margin:0 0 10px 0;color:#0f172a;font-size:18px}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:10px;
+}
+
+.materia{
+  padding:14px;border-radius:12px;text-align:center;font-weight:600;min-height:64px;
+  display:flex;align-items:center;justify-content:center;text-wrap:balance;cursor:pointer;transition:.18s transform ease,.18s filter ease;
+  border:1px solid var(--border);
+}
+.materia:hover{transform:translateY(-1px)}
+
+.materia.bloqueado{background:var(--bloq);color:#6b7280;cursor:not-allowed}
+.materia.disponible{background:var(--disp);color:#111827}
+.materia.aprobado{background:var(--aprob);color:#fff}
+
+.footer{max-width:1200px;margin:8px auto 24px;padding:0 16px;color:var(--muted);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.legend{display:flex;gap:8px;align-items:center}
+.pill{padding:6px 10px;border-radius:999px;font-size:12px;border:1px solid var(--border)}
+.pill-bloq{background:var(--bloq);color:#374151}
+.pill-disp{background:var(--disp);color:#111827}
+.pill-aprob{background:var(--aprob);color:#fff;border-color:#15803d}
